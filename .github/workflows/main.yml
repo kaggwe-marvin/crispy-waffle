@@ -1,4 +1,4 @@
-name: "CI"
+name: "testing creating actions"
 
 on:
   pull_request: 
@@ -12,5 +12,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run hello-world-action
-        uses: ./hello-world-action
+        uses: ./
        

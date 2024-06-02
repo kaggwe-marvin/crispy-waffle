@@ -1,10 +1,12 @@
-name: "Hello World"
-description: "A simple hello world action"
+name: "hello world"
+description: "say hello to new pull request"
 author: "kaggwe-marvin"
+
 inputs:
   GITHUB_TOKEN:
     description: "Github token"
     required: true
+
 runs:
   using: "node20"
   main: "dist/index.js"
