@@ -12,5 +12,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Run hello-world-action
-        uses: ./
+        uses: ./hello-world-action
        
