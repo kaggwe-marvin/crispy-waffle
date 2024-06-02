@@ -2,10 +2,9 @@ name: "Hello World"
 description: "A simple hello world action"
 author: "kaggwe-marvin"
 inputs:
-  who-to-greet:
-    description: "Who to greet"
+  GITHUB_TOKEN:
+    description: "Github token"
     required: true
-    default: "World"
 runs:
   using: "node20"
   main: "dist/index.js"
