@@ -1,16 +1,28 @@
-name: "testing creating actions"
+name: Create Branch Workflow
 
 on:
-  pull_request: 
-    types: [opened]
+  workflow_dispatch:
+    inputs:
+      branch-type:
+        description: 'Type of branch (feature, bugfix, etc.)'
+        required: true
+        default: 'feature'
+      branch-name:
+        description: 'Name of the branch'
+        required: true
+        default: 'example-branch'
 
 jobs:
-  hello_world_job:
+  create-branch:
     runs-on: ubuntu-latest
-    name: A job to say hello
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      - name: hello
+
+      - name: Create new branch
         uses: ./
-       
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          branch-type: ${{ github.event.inputs.branch-type }}
+          branch-name: ${{ github.event.inputs.branch-name }}
